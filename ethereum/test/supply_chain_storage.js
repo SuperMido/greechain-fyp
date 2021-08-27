@@ -2,7 +2,6 @@ const SupplyChainStorage = artifacts.require("../contracts/SupplyChainStorage.so
 
 const assert = require('chai').assert;
 
-/*Define common variables for unit testing*/
 const _name = 'Ram';
 const _contactNo = '9876543210';
 const _role = 'HARVESTER';
@@ -18,7 +17,6 @@ contract('SupplyChainStorage',function(accounts)
 	beforeEach(async() => {
 	  	this.storageContract = await SupplyChainStorage.new({from:spenderAddress});
 	    
-	  	// await this.storageContract.authorizeCaller(this.storageContract.address,{from:spenderAddress});
 	});	
 
 	describe('Authorize Caller',() => {
