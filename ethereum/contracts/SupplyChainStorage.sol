@@ -75,5 +75,27 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         string humidity;
     }    
     
+    struct exporter {
+        string destinationAddress;
+        string shipName;
+        string shipNo;
+        uint256 quantity;
+        uint256 departureDateTime;
+        uint256 estimateDateTime;
+        uint256 plantNo;
+        uint256 exporterId;
+    }
+    
+    struct importer {
+        uint256 quantity;
+        uint256 arrivalDateTime;
+        uint256 importerId;
+        string shipName;
+        string shipNo;
+        string transportInfo;
+        string warehouseName;
+        string warehouseAddress;
+    }
+
   
 }  
