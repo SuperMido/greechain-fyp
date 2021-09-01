@@ -52,5 +52,15 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         return true;
     }
     
+    
+    /* Process Related */
+     struct basicDetails {
+        string registrationNo;
+        string farmerName;
+        string farmAddress;
+        string exporterName;
+        string importerName;
+        
+    }
   
 }  
