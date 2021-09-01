@@ -124,5 +124,53 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
     importer importerData;
     processor processorData; 
     
+
+    /* Get User Role */
+    function getUserRole(address _userAddress) public onlyAuthCaller view returns(string)
+    {
+        return userRole[_userAddress];
+    }
+    
+    /* Get Next Action  */    
+    function getNextAction(address _batchNo) public onlyAuthCaller view returns(string)
+    {
+        return nextAction[_batchNo];
+    }
+        
+    /*set user details*/
+    function setUser(address _userAddress,
+                     string _name, 
+                     string _contactNo, 
+                     string _role, 
+                     bool _isActive,
+                     string _profileHash) public onlyAuthCaller returns(bool){
+        
+        /*store data into struct*/
+        userDetail.name = _name;
+        userDetail.contactNo = _contactNo;
+        userDetail.isActive = _isActive;
+        userDetail.profileHash = _profileHash;
+        
+        /*store data into mapping*/
+        userDetails[_userAddress] = userDetail;
+        userRole[_userAddress] = _role;
+        
+        return true;
+    }  
+    
+    /*get user details*/
+    function getUser(address _userAddress) public onlyAuthCaller view returns(string name, 
+                                                                    string contactNo, 
+                                                                    string role,
+                                                                    bool isActive, 
+                                                                    string profileHash
+                                                                ){
+
+        /*Getting value from struct*/
+        user memory tmpData = userDetails[_userAddress];
+        
+        return (tmpData.name, tmpData.contactNo, userRole[_userAddress], tmpData.isActive, tmpData.profileHash);
+    }
+    
   
 }  
