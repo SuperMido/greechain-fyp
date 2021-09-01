@@ -106,6 +106,23 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         string processorName;
         string processorAddress;
     }
-
+    
+    mapping (address => basicDetails) batchBasicDetails;
+    mapping (address => farmInspector) batchFarmInspector;
+    mapping (address => harvester) batchHarvester;
+    mapping (address => exporter) batchExporter;
+    mapping (address => importer) batchImporter;
+    mapping (address => processor) batchProcessor;
+    mapping (address => string) nextAction;
+    
+    /*Initialize struct pointer*/
+    user userDetail;
+    basicDetails basicDetailsData;
+    farmInspector farmInspectorData;
+    harvester harvesterData;
+    exporter exporterData;
+    importer importerData;
+    processor processorData; 
+    
   
 }  
