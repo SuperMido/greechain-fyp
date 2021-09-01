@@ -62,5 +62,12 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         string importerName;
         
     }
+    
+    struct farmInspector {
+        string coffeeFamily;
+        string typeOfSeed;
+        string fertilizerUsed;
+    }
+    
   
 }  
