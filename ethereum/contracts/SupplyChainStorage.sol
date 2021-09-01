@@ -69,5 +69,11 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         string fertilizerUsed;
     }
     
+    struct harvester {
+        string cropVariety;
+        string temperatureUsed;
+        string humidity;
+    }    
+    
   
 }  
