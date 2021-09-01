@@ -96,6 +96,16 @@ contract SupplyChainStorage is SupplyChainStorageOwnable {
         string warehouseName;
         string warehouseAddress;
     }
+    
+    struct processor {
+        uint256 quantity;
+        uint256 rostingDuration;
+        uint256 packageDateTime;
+        string temperature;
+        string internalBatchNo;
+        string processorName;
+        string processorAddress;
+    }
 
   
 }  
