@@ -13,6 +13,9 @@ import {
   Button
 } from '@chakra-ui/react'
 
+import globMainContract from '../abi/CoffeeSupplyChain'
+import globUserContract from '../abi/SupplyChainUser'
+
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const App = () => {
